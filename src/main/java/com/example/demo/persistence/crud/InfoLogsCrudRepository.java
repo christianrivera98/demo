@@ -8,7 +8,8 @@ import java.util.List;
 import java.util.UUID;
 
 public interface InfoLogsCrudRepository extends CrudRepository<InfoLogs, UUID> {
-    List<InfoLogs> findByTipo (String tipo);
-    List<InfoLogs> findByFecha(Timestamp fecha);
+
+//    List<InfoLogs> findByTipo (String tipo);
+//    List<InfoLogs> findByFecha(Timestamp fechaEnvio);
 }
 

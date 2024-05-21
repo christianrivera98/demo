@@ -5,17 +5,17 @@ import java.util.UUID;
 
 public class LogsDomain {
 
-    private UUID logsId;
+    private UUID logId;
     private String logType;
     private String project;
-    private Timestamp fechaEnvio;
+    private Timestamp date;
 
-    public UUID getLogsId() {
-        return logsId;
+    public UUID getLogId() {
+        return logId;
     }
 
-    public void setLogsId(UUID logsId) {
-        this.logsId = logsId;
+    public void setLogId(UUID logId) {
+        this.logId = logId;
     }
 
     public String getLogType() {
@@ -34,11 +34,11 @@ public class LogsDomain {
         this.project = project;
     }
 
-    public Timestamp getFechaEnvio() {
-        return fechaEnvio;
+    public Timestamp getDate() {
+        return date;
     }
 
-    public void setFechaEnvio(Timestamp fechaEnvio) {
-        this.fechaEnvio = fechaEnvio;
+    public void setDate(Timestamp date) {
+        this.date = date;
     }
 }

@@ -12,10 +12,10 @@ import java.util.List;
 public interface LogsMapper {
 
   @Mappings({
-          @Mapping(source = "identificador", target = "logsId"),
+          @Mapping(source = "identificador", target = "logId"),
           @Mapping(source = "tipo", target = "logType"),
           @Mapping(source = "proyecto", target = "project"),
-          @Mapping(source = "fecha", target = "fechaEnvio"),
+          @Mapping(source = "fechaEnvio", target = "date"),
 
   })
   LogsDomain toLogs(InfoLogs infoLogs);

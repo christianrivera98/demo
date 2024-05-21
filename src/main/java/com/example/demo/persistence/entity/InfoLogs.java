@@ -1,26 +1,30 @@
 package com.example.demo.persistence.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.sql.Timestamp;
 import java.util.UUID;
 
+@Setter
+@Getter
 @Entity
 @Table(name= "info_logs")
-
+@Data
+@Builder(toBuilder = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class InfoLogs {
     @Id
-    @Column(name = "logId")
+    @Column(name = "logId", updatable = false, nullable = false)
+    @Convert(converter = UUIDConverter.class)
     private UUID identificador;
 
     @Column(name = "logType")
     private String tipo;
 
-    @Column(name = "fechaEnvio")
-    private Timestamp fecha;
+//    @Column(name = "fechaEnvio")
+    private Timestamp fechaEnvio;
 
     @Column(name = "project")
     private String proyecto;
@@ -48,10 +52,10 @@ public class InfoLogs {
     private String dataSeedCode;
 
     @Column(name = "data_country")
-    private Timestamp dataCountry;
+    private String dataCountry;
 
     @Column(name = "data_state")
-    private Timestamp dataState;
+    private String dataState;
 
     public UUID getIdentificador() {
         return identificador;
@@ -69,12 +73,12 @@ public class InfoLogs {
         this.tipo = tipo;
     }
 
-    public Timestamp getFecha() {
-        return fecha;
+    public Timestamp getFechaEnvio() {
+        return fechaEnvio;
     }
 
-    public void setFecha(Timestamp fecha) {
-        this.fecha = fecha;
+    public void setFechaEnvio(Timestamp fechaEnvio) {
+        this.fechaEnvio = fechaEnvio;
     }
 
     public String getProyecto() {
@@ -149,19 +153,19 @@ public class InfoLogs {
         this.dataSeedCode = dataSeedCode;
     }
 
-    public Timestamp getDataCountry() {
+    public String getDataCountry() {
         return dataCountry;
     }
 
-    public void setDataCountry(Timestamp dataCountry) {
+    public void setDataCountry(String dataCountry) {
         this.dataCountry = dataCountry;
     }
 
-    public Timestamp getDataState() {
+    public String getDataState() {
         return dataState;
     }
 
-    public void setDataState(Timestamp dataState) {
+    public void setDataState(String dataState) {
         this.dataState = dataState;
     }
 }

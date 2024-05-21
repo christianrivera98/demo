@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface LogsRepository {
     List<LogsDomain> getAll();
-    List<LogsDomain> getByTipo(String tipo);
-    List<LogsDomain> getByFecha(Timestamp fecha);
+//    List<LogsDomain> getByTipo(String tipo);
+//    List<LogsDomain> getByFecha(Timestamp fecha);
 
 }
